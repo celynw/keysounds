@@ -124,10 +124,15 @@ void handleKey(int keyCode) {
 	else if (keyCode == kVK_UpArrow ||
 			 keyCode == kVK_DownArrow ||
 			 keyCode == kVK_LeftArrow ||
-			 keyCode == kVK_RightArrow) {
+			 keyCode == kVK_RightArrow ||
+			 keyCode == kVK_PageUp ||
+			 keyCode == kVK_PageDown ||
+			 keyCode == kVK_Home ||
+			 keyCode == kVK_End) {
 		system("afplay ~/Library/Application\\ Support/KeySounds/high.aif &");
 	}
 	else if (keyCode == kVK_Delete ||
+	         keyCode == kVK_ForwardDelete ||
 			 keyCode == kVK_Escape) {
 		system("afplay ~/Library/Application\\ Support/KeySounds/low.aif &");
 	}
