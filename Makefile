@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-Wall -framework ApplicationServices -framework Carbon
 SOURCES=keysounds.c
 EXECUTABLE=keysounds
-PLIST=keysounds.plist
+PLIST=com.celynwalters.keysounds.plist
 INSTALLDIR=/usr/local/bin
 SUPPORT=Support/
 SUPPORTDIR=~/Library/Application\ Support/KeySounds/
@@ -18,11 +18,11 @@ install:
 
 uninstall:
 	rm $(INSTALLDIR)/$(EXECUTABLE)
-	rm /Library/LaunchDaemons/$(PLIST)
+	rm /Library/LaunchAgents/$(PLIST)
 	rm -r $(SUPPORTDIR)
 
 startup:
-	cp $(PLIST) /Library/LaunchDaemons
+	cp $(PLIST) /Library/LaunchAgents
 
 clean:
 	rm $(EXECUTABLE)

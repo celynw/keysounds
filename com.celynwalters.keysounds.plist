@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.keysounds.keysounds</string>
+  <string>com.celynwalters.keysounds</string>
   <key>ProgramArguments</key>
   <array>
       <string>/usr/local/bin/keysounds</string>
