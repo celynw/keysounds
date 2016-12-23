@@ -3,7 +3,12 @@
 
 int main(int argc, const char *argv[]) {
 		// Create an event tap to retrieve keypresses.
-		CGEventMask eventMask = (CGEventMaskBit(kCGEventKeyDown) | CGEventMaskBit(kCGEventFlagsChanged));
+		CGEventMask eventMask = (CGEventMaskBit(kCGEventKeyDown) |
+		                         CGEventMaskBit(kCGEventFlagsChanged) |
+		                         CGEventMaskBit(kCGEventLeftMouseDown) |
+		                         CGEventMaskBit(kCGEventLeftMouseUp) |
+		                         CGEventMaskBit(kCGEventRightMouseDown) |
+		                         CGEventMaskBit(kCGEventRightMouseUp));
 		CFMachPortRef eventTap = CGEventTapCreate(
 			kCGSessionEventTap, kCGHeadInsertEventTap, 0, eventMask, CGEventCallback, NULL
 		);
@@ -26,13 +31,24 @@ int main(int argc, const char *argv[]) {
 
 // The following callback method is invoked on every keypress.
 CGEventRef CGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
-		if (type != kCGEventKeyDown && type != kCGEventFlagsChanged && type != kCGEventKeyUp) { return event; }
-
-		// Retrieve the incoming keycode.
+	if (type == kCGEventKeyDown ||
+	    type == kCGEventFlagsChanged) {
 		CGKeyCode keyCode = (CGKeyCode) CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
-
 		handleKey(keyCode);
 		return event;
+	}
+	else if (type == kCGEventLeftMouseDown ||
+	         type == kCGEventRightMouseDown) {
+		system("afplay ~/Library/Application\\ Support/KeySounds/mousedown.aif &");
+		return event;
+	}
+	else if (type == kCGEventLeftMouseUp ||
+	         type == kCGEventRightMouseUp) {
+		system("afplay ~/Library/Application\\ Support/KeySounds/mouseup.aif &");
+		return event;
+	}
+	else
+	    return event;
 }
 
 // The following method converts the key code returned by each keypress as
