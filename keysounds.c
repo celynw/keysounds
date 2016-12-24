@@ -78,7 +78,7 @@ void handleKey(int keyCode) {
 	    keyCode == kVK_ANSI_X ||
 	    keyCode == kVK_ANSI_Y ||
 	    keyCode == kVK_ANSI_Z) {
-		system("afplay ~/Library/Application\\ Support/KeySounds/base.aif &");
+		system("afplay ~/Library/Application\\ Support/KeySounds/regular.aif &");
 	}
 	else if (keyCode == kVK_ANSI_1 ||
 	         keyCode == kVK_ANSI_2 ||
@@ -105,7 +105,7 @@ void handleKey(int keyCode) {
 			 keyCode == kVK_Tab ||
 			 keyCode == kVK_Space
 	         ) {
-		system("afplay ~/Library/Application\\ Support/KeySounds/modifier.aif &");
+		system("afplay ~/Library/Application\\ Support/KeySounds/symbols.aif &");
 	}
 	else if (keyCode == kVK_Function ||
 	         keyCode == kVK_Control ||
@@ -117,7 +117,7 @@ void handleKey(int keyCode) {
 	         keyCode == kVK_Shift ||
 			 keyCode == kVK_RightShift ||
 			 keyCode == kVK_CapsLock) {
-		system("afplay ~/Library/Application\\ Support/KeySounds/extra.aif &");
+		system("afplay ~/Library/Application\\ Support/KeySounds/modifier.aif &");
 	}
 	else if (keyCode == kVK_UpArrow ||
 			 keyCode == kVK_DownArrow ||
@@ -127,12 +127,12 @@ void handleKey(int keyCode) {
 			 keyCode == kVK_PageDown ||
 			 keyCode == kVK_Home ||
 			 keyCode == kVK_End) {
-		system("afplay ~/Library/Application\\ Support/KeySounds/high.aif &");
+		system("afplay ~/Library/Application\\ Support/KeySounds/navigation.aif &");
 	}
 	else if (keyCode == kVK_Delete ||
 	         keyCode == kVK_ForwardDelete ||
 			 keyCode == kVK_Escape) {
-		system("afplay ~/Library/Application\\ Support/KeySounds/low.aif &");
+		system("afplay ~/Library/Application\\ Support/KeySounds/negative.aif &");
 	}
 	else if (keyCode == kVK_F1 ||
 	         keyCode == kVK_F2 ||
@@ -146,7 +146,7 @@ void handleKey(int keyCode) {
 	         keyCode == kVK_F10 ||
 	         keyCode == kVK_F11 ||
 	         keyCode == kVK_F12) {
-		system("afplay ~/Library/Application\\ Support/KeySounds/super.aif &");
+		system("afplay ~/Library/Application\\ Support/KeySounds/extra.aif &");
 	}
 	return;
 }
