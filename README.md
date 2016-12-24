@@ -26,5 +26,5 @@ This inserts a `LaunchAgent` which will run the app in the background after logi
 ##### Troubleshooting
 - If you can hear sounds only for modifier keys, like ⌘⌥⇧, the app probably hasn't been added to Assisted Devices. See the installation instructions
 - Protected fields like passwords don't trigger the sounds. It's a feature!
-- Open an issue if there's keys missing. I didn't blindly add them all.
+- Open an issue if there's keys missing. I didn't blindly add them all.  
   Some don't trigger the callback, such as ⏏ or §

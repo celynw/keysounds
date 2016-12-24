@@ -1,7 +1,7 @@
 #include "keysounds.h"
 
 int main(int argc, const char *argv[]) {
-		// Create an event tap to retrieve keypresses.
+		// Create event tap
 		CGEventMask eventMask = (CGEventMaskBit(kCGEventKeyDown) |
 		                         CGEventMaskBit(kCGEventFlagsChanged) |
 		                         CGEventMaskBit(kCGEventLeftMouseDown) |
@@ -12,23 +12,21 @@ int main(int argc, const char *argv[]) {
 			kCGSessionEventTap, kCGHeadInsertEventTap, 0, eventMask, CGEventCallback, NULL
 		);
 
-		// Exit the program if unable to create the event tap.
+		// Exit if unable to create event tap
 		if(!eventTap) {
 			fprintf(stderr, "ERROR: Unable to create event tap.\n");
 			exit(1);
 		}
 
-		// Create a run loop source and add enable the event tap.
+		// Create a run loop source, enable event tap
 		CFRunLoopSourceRef runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0);
 		CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, kCFRunLoopCommonModes);
 		CGEventTapEnable(eventTap, true);
-
 		CFRunLoopRun();
-
 		return 0;
 }
 
-// The following callback method is invoked on every keypress.
+// Callback invoked on every keypress
 CGEventRef CGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
 	if (type == kCGEventKeyDown ||
 	    type == kCGEventFlagsChanged) {
@@ -50,7 +48,7 @@ CGEventRef CGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef e
 	    return event;
 }
 
-// The following method converts the key code returned by each keypress as
+// Plays sounds based on which keys are pressed
 void handleKey(int keyCode) {
 	if (keyCode == kVK_ANSI_A ||
 	    keyCode == kVK_ANSI_B ||
