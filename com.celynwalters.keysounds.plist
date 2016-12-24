@@ -6,7 +6,7 @@
   <string>com.celynwalters.keysounds</string>
   <key>ProgramArguments</key>
   <array>
-      <string>/usr/local/bin/keysounds</string>
+      <string>/usr/local/bin/KeySounds.app/Contents/MacOS/keysounds</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
