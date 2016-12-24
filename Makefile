@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -framework ApplicationServices -framework Carbon
+CFLAGS=-Wall -framework Carbon
 SOURCES=keysounds.c
 EXECUTABLE=keysounds
 APP=KeySounds.app
@@ -35,6 +35,6 @@ startup:
 
 clean:
 # (sudo) Should be the only thing in here
-	-rm $(APP)
+	-rm -r $(APP)
 
 

@@ -1,5 +1,4 @@
 #include "keysounds.h"
-#include <Carbon/Carbon.h>
 
 int main(int argc, const char *argv[]) {
 		// Create an event tap to retrieve keypresses.
@@ -53,7 +52,6 @@ CGEventRef CGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef e
 
 // The following method converts the key code returned by each keypress as
 void handleKey(int keyCode) {
-	printf("%02x\n", keyCode);
 	if (keyCode == kVK_ANSI_A ||
 	    keyCode == kVK_ANSI_B ||
 	    keyCode == kVK_ANSI_C ||
