@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.celynwalters.keysounds</string>
+  <string>com.kelzebub.keysounds</string>
   <key>ProgramArguments</key>
   <array>
       <string>/usr/local/bin/KeySounds.app/Contents/MacOS/keysounds</string>
