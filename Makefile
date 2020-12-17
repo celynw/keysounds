@@ -4,7 +4,7 @@ SOURCES=keysounds.c
 EXECUTABLE=keysounds
 APP=KeySounds.app
 APPINTERNAL=Contents/MacOS
-PLIST=com.kelzebub.keysounds.plist
+PLIST=com.celynw.keysounds.plist
 INSTALLDIR=/usr/local/bin
 SUPPORT=Support/
 SUPPORTDIR=~/Library/Application\ Support/KeySounds/
@@ -36,5 +36,3 @@ startup:
 clean:
 # (sudo) Should be the only thing in here
 	-rm -r $(APP)
-
-
